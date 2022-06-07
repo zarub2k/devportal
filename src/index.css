@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-5xl
+  }
+  h2 {
+    @apply text-4xl
+  }
+  h3 {
+    @apply text-3xl
+  }
+  h4 {
+    @apply text-2xl
+  }
+  h5 {
+    @apply text-xl
+  }
+  h6 {
+    @apply text-lg
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-api-900 text-api-100 px-4 py-2 min-w-[100px]
+  }
+  .btn-secondary {
+    @apply bg-api-200 text-api-900 px-4 py-2 min-w-[100px]
+  }
+  .circle {
+    @apply rounded-full bg-api-900 text-api-100 m-auto
+  }
+  .hero {
+    @apply text-6xl
+  }
+}
