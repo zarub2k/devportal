@@ -66,8 +66,11 @@
 </script>
 <template>
   <section class="px-10 py-2">
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-3 gap-4" v-if="apis.length > 0">
       <ApiCard v-for="api in apis" :key="api.id" :api="api" />
+    </div>
+    <div v-else>
+      No api(s) found!
     </div>
     <!-- <div v-if="apis.length > 0">
       <ApiCard v-for="api in apis" :key="api.id" :api="api" />
