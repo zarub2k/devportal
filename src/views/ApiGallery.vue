@@ -4,26 +4,58 @@
   import ApiCard from '../components/ApiCard.vue'
 
   let apis = ref([])
-  // apis.value.push({
-  //   name: 'Hello API',
-  //   summary: 'Hello api summary'
-  // })
-  // apis.value.push({
-  //   name: 'Portal API',
-  //   summary: 'Portal api summary'
-  // })
+  
 
+  const BASE_URL = import.meta.env.VITE_DEVPORTAL_API_URL
   onMounted(() => {
-    const apiUrl = import.meta.env.VITE_DEVPORTAL_API_URL + '/apis'
+    search()
+  })
+
+  const dummy = () => {
+    apis.value.push({
+      name: 'Hello API',
+      summary: 'Hello api summary'
+    })
+    apis.value.push({
+      name: 'Portal API',
+      summary: 'Portal api summary'
+    })
+  }
+
+  const all = () => {
+    const apiUrl = BASE_URL + '/apis'
     fetch(apiUrl)
       .then(response => response.json())
       .then((data) => {
         apis.value = data.result
       })
-  })
+  }
 
-  const endpoint = import.meta.env.VITE_DEVPORTAL_API_URL
-  console.log(endpoint)
+  const search = () => {
+    const searchUrl = BASE_URL + '/search/basic'
+    const searchOption = {
+      conjuction: 'AND',
+      criterias: [
+        {
+          field: 'latest',
+          values: ['true'],
+          operation: 'EQUALS'
+        }
+      ]
+    }
+
+    fetch(searchUrl, {
+      method: 'POST',
+      body: JSON.stringify(searchOption),
+      headers: {
+      'Content-Type': 'application/json'
+    },
+    })
+    .then(response => response.json())
+    .then((data) => {
+      apis.value = data.result
+    })
+  }
 </script>
 <template>
   <section>
