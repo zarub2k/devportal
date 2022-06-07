@@ -18,7 +18,7 @@ import { ClipboardListIcon, CubeTransparentIcon, PresentationChartLineIcon } fro
     </div>
 
     <div>
-      <h5 class="text-center mb-4 mt-4">Services</h5>
+      <h5 class="text-center mb-4 mt-4">Features</h5>
       <div class="grid grid-cols-3 gap-4">
         <div class="service-card">
           <p>

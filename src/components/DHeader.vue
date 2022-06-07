@@ -9,7 +9,7 @@
       </div>
       <div class="navlinks">
         <router-link :to="{name: 'apis'}" class="">API Gallery</router-link>
-        <router-link :to="{name: 'apis'}" class="">Package Gallery</router-link>
+        <router-link :to="{name: 'packages'}" class="">Package Gallery</router-link>
       </div>   
     </div> 
   </header>
