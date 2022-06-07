@@ -1,0 +1,3 @@
+<template>
+  API Gallery
+</template>
