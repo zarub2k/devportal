@@ -7,7 +7,7 @@
   
   const BASE_URL = import.meta.env.VITE_DEVPORTAL_API_URL
   onMounted(() => {
-    dummy()
+    search()
   })
 
   const dummy = () => {
