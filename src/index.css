@@ -21,6 +21,9 @@
   h6 {
     @apply text-lg
   }
+  input, select, textarea {
+    @apply p-2 focus:outline-none border border-api-400
+  }
 }
 
 @layer components {

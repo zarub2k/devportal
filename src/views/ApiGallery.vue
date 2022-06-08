@@ -66,6 +66,10 @@
 </script>
 <template>
   <section class="px-10 py-2">
+    <div class="flex justify-center justify-items-center my-6 gap-1">
+      <input type="text" class="w-1/3" placeholder="Search keyword"/>
+      <button class="btn-primary">Search</button>
+    </div>
     <div class="grid grid-cols-3 md:grid-cols-4 gap-4" v-if="apis.length > 0">
       <ApiCard v-for="api in apis" :key="api.id" :api="api" />
     </div>
